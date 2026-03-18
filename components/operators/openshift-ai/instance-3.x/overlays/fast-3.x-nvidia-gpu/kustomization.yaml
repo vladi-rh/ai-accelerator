@@ -14,7 +14,6 @@ components:
   - ../../components/components-trainingoperator
   - ../../components/components-trustyai
   - ../../components/components-workbenches
-  - ../../components/hardware-profiles-cpu
   - ../../components/hardware-profiles-nvidia-gpu
   - ../../components/idle-notebook-culling
   - ../../components/inference-gateway
