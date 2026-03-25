@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: redhat-ods-applications
 
 resources:
+  - data-science-gatewayclass.yaml
   - datasciencecluster.yaml
   - dsc-init.yaml
   - namespace.yaml
