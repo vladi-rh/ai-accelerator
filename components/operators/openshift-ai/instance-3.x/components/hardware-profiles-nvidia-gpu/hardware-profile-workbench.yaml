@@ -7,6 +7,7 @@ metadata:
     opendatahub.io/disabled: "false"
     opendatahub.io/display-name: nvidia-gpu
   name: nvidia-gpu-notebooks
+  namespace: redhat-ods-applications
 spec:
   identifiers:
     - identifier: cpu
