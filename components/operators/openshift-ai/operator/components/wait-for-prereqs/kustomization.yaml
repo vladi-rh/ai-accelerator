@@ -6,6 +6,12 @@ namespace: redhat-ods-operator
 resources:
 - wait-for-prereqs-job.yaml
 
+patches:
+  - path: patch-namespace-hook.yaml
+    target:
+      kind: Namespace
+      name: redhat-ods-operator
+
 generatorOptions:
   disableNameSuffixHash: true
   annotations:
