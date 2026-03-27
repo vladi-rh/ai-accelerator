@@ -53,9 +53,11 @@ ECK
 EOF
 Elasticsearch
 Elyra
+Eval
 Eventing
 FullAccess
 GPUs
+GatewayClass
 GenAI
 Gi
 GitOps
@@ -72,7 +74,6 @@ IgnoreExtraneous
 ImageSetConfiguration
 ImageStreams
 Infiniband
-installPlanApproval
 Istio
 Jaeger
 Jenkins
@@ -85,20 +86,23 @@ KieApp
 Koku
 KokuMetricsConfig
 KubeRay
+Kubeflow
 Kubernetes
 Kueue
 Kyverno
 LDAP
 LLM
+LM
 LVM
 Lifecycle
+LlamaStack
 Logstash
 MLOps
 MTA
+MaaS
 MachineConfig
 MachineSet
 MachineSets
-microservice
 MinIO
 ModelMesh
 MultiClusterHub
@@ -115,7 +119,7 @@ OCSInitialization
 ODH
 OLM
 ONNX
-observability
+OSSM
 Observability
 OpenDataHub
 OpenShift
@@ -123,8 +127,6 @@ OpenVino
 OperaterHub
 OperatorGroup
 OperatorHub
-OSSM
-param
 PCI
 PV
 PolicyReport
@@ -175,6 +177,7 @@ XAI
 ack
 acm
 ai
+aipipelines
 aiservices
 amq
 anythingllm
@@ -232,6 +235,7 @@ embeddings
 env
 eus
 eventing
+explainability
 finalizer
 generatorOptions
 github
@@ -247,11 +251,13 @@ html
 htpass
 https
 huggingface
+hyperparameter
 iam
 ibm
 idp
 infras
 init
+installPlanApproval
 installplan
 installplans
 io
@@ -282,6 +288,7 @@ linux
 llamastack
 llm
 machineset
+microservice
 microservices
 mig
 minio
@@ -297,6 +304,7 @@ nonGPU
 noobaa
 nvidia
 oauth
+observability
 oc
 ocp
 ocs
@@ -309,6 +317,7 @@ opentlc
 operatorGroup
 operatorGroups
 parallelize
+param
 patchesJson
 pgvector
 postgres
@@ -360,7 +369,9 @@ templating
 tensorflow
 tgis
 thanos
+tolerations
 traefik
+trainingoperator
 triton
 truly
 trustyai
