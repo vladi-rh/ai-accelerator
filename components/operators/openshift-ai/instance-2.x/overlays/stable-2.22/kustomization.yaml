@@ -14,7 +14,7 @@ components:
   - ../../components/components-training
   - ../../components/dashboard-feature-hardware-profiles
   - ../../components/default-notebook-pvc-size
-  - ../../components/idle-notebook-culling
   - ../../components/hardware-profiles-2.22-cpu
+  - ../../components/idle-notebook-culling
   - ../../components/make-kubeadmin-cluster-admin
   - ../../components/rhoai-auth

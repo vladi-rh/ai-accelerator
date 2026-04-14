@@ -4,9 +4,8 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-  - ../../base
   - ../../../components/argocd/apps/overlays/rhoai-stable-2.22
-
+  - ../../base
 # patches:
 #   Uncomment patches to disable automatic sync
 #   - path: patch-applicationset-manual-sync.yaml

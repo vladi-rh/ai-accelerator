@@ -14,7 +14,7 @@ components:
   - ../../components/components-training
   - ../../components/default-notebook-pvc-size
   - ../../components/idle-notebook-culling
-  - ../../components/notebook-pod-sizes
   - ../../components/make-kubeadmin-cluster-admin
   - ../../components/model-server-pod-sizes
+  - ../../components/notebook-pod-sizes
   - ../../components/rhoai-auth

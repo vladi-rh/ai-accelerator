@@ -4,9 +4,8 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-- ../../base
-- ../../../components/argocd/apps/overlays/rhoai-eus-2.16-aws-gpu
-
+  - ../../../components/argocd/apps/overlays/rhoai-eus-2.16-aws-gpu
+  - ../../base
 # patches:
 # set the repo and branch for applications
 # Uncomment patches to disable automatic sync
@@ -22,21 +21,21 @@ resources:
 #     version: v1alpha1
 
 replacements:
-# copy the repo from the application to the applicationsets
-- source:
-    kind: Application
-    fieldPath: spec.source.repoURL
-  targets:
-  - select:
-      kind: ApplicationSet
-    fieldPaths:
-    - spec.template.spec.source.repoURL
-# copy the branch from the application to the applicationsets
-- source:
-    kind: Application
-    fieldPath: spec.source.targetRevision
-  targets:
-  - select:
-      kind: ApplicationSet
-    fieldPaths:
-    - spec.template.spec.source.targetRevision
+  # copy the repo from the application to the applicationsets
+  - source:
+      kind: Application
+      fieldPath: spec.source.repoURL
+    targets:
+      - select:
+          kind: ApplicationSet
+        fieldPaths:
+          - spec.template.spec.source.repoURL
+  # copy the branch from the application to the applicationsets
+  - source:
+      kind: Application
+      fieldPath: spec.source.targetRevision
+    targets:
+      - select:
+          kind: ApplicationSet
+        fieldPaths:
+          - spec.template.spec.source.targetRevision
