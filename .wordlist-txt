@@ -99,6 +99,7 @@ Lifecycle
 LlamaStack
 Logstash
 MLOps
+MLflow
 MTA
 MaaS
 MachineConfig
@@ -118,6 +119,7 @@ OADP
 OAuth
 OCSInitialization
 ODH
+OGX
 OLM
 ONNX
 OSSM
@@ -183,6 +185,7 @@ XAI
 Zipkin
 ack
 acm
+agentic
 ai
 aipipelines
 aiservices
@@ -301,6 +304,7 @@ microservice
 microservices
 mig
 minio
+mlflow
 modelregistry
 na
 namespace
@@ -318,6 +322,7 @@ oc
 ocp
 ocs
 odf
+ogx
 olm
 openAPI
 opendatahub
