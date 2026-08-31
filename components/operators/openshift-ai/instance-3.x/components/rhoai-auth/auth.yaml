@@ -4,6 +4,6 @@ metadata:
   name: auth
 spec:
   adminGroups:
-    - rhods-admins
+    - rhoai-cluster-admins
   allowedGroups:
-    - 'system:authenticated'
+    - rhoai-users
