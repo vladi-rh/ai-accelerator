@@ -5,4 +5,4 @@ metadata:
 spec:
   components:
     feastoperator:
-      managementState: Managed
+      managementState: Removed

@@ -5,4 +5,4 @@ metadata:
 spec:
   components:
     workbenches:
-      managementState: Managed
+      managementState: Removed

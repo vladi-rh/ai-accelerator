@@ -5,4 +5,4 @@ metadata:
 spec:
   components:
     aipipelines:
-      managementState: Managed
+      managementState: Removed
