@@ -22,6 +22,8 @@ spec:
     enabled: true
     serviceMonitor:
       enabled: true
+      additionalLabels:
+        monitoring.opendatahub.io/scrape: "true"
   driver:
     licensingConfig:
       configMapName: ''
