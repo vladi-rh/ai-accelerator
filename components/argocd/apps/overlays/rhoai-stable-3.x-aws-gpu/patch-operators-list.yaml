@@ -70,13 +70,18 @@ spec:
       - cluster: local
         url: https://kubernetes.default.svc
         values:
+          name: loki-operator
+          path: components/operators/loki/aggregate/overlays/default
+      - cluster: local
+        url: https://kubernetes.default.svc
+        values:
           name: redhat-build-of-opentelemetry-operator
-          path: components/operators/redhat-build-of-opentelemetry/operator/overlays/stable
+          path: components/operators/redhat-build-of-opentelemetry/aggregate/overlays/default
       - cluster: local
         url: https://kubernetes.default.svc
         values:
           name: tempo-operator
-          path: components/operators/tempo-operator/operator/overlays/stable
+          path: components/operators/tempo-operator/aggregate/overlays/default
 
       # - cluster: local
       #   url: https://kubernetes.default.svc
