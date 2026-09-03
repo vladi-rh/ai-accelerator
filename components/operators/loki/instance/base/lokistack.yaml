@@ -5,6 +5,11 @@ metadata:
   namespace: openshift-loki-operator
 spec:
   size: 1x.demo
+  managementState: Managed
+  limits:
+    global:
+      retention:
+        days: 7
   storage:
     schemas:
       - effectiveDate: "2024-10-01"
