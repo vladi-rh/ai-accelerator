@@ -83,11 +83,11 @@ spec:
           name: tempo-operator
           path: components/operators/tempo-operator/aggregate/overlays/default
 
-      # - cluster: local
-      #   url: https://kubernetes.default.svc
-      #   values:
-      #     name: openshift-logging-operator
-      #     path: components/operators/openshift-logging/aggregate/overlays/default
+      - cluster: local
+        url: https://kubernetes.default.svc
+        values:
+          name: openshift-logging-operator
+          path: components/operators/openshift-logging/aggregate/overlays/default
       # - cluster: local
       #   url: https://kubernetes.default.svc
       #   values:
