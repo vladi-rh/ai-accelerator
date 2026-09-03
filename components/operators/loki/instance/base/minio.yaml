@@ -1,0 +1,103 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: loki-minio-credentials
+  namespace: openshift-loki-operator
+type: Opaque
+stringData:
+  endpoint: http://loki-minio.openshift-loki-operator.svc:9000
+  bucketnames: loki
+  access_key_id: minio
+  access_key_secret: minio123
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: loki-minio-data
+  namespace: openshift-loki-operator
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loki-minio
+  namespace: openshift-loki-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loki-minio
+  template:
+    metadata:
+      labels:
+        app: loki-minio
+    spec:
+      containers:
+        - name: minio
+          image: quay.io/minio/minio:latest
+          args:
+            - server
+            - /data
+            - --console-address
+            - ":9001"
+          env:
+            - name: MINIO_ROOT_USER
+              value: minio
+            - name: MINIO_ROOT_PASSWORD
+              value: minio123
+          ports:
+            - containerPort: 9000
+              name: api
+            - containerPort: 9001
+              name: console
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: loki-minio-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loki-minio
+  namespace: openshift-loki-operator
+spec:
+  selector:
+    app: loki-minio
+  ports:
+    - port: 9000
+      targetPort: 9000
+      name: api
+    - port: 9001
+      targetPort: 9001
+      name: console
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: loki-minio-create-bucket
+  namespace: openshift-loki-operator
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: mc
+          image: quay.io/minio/mc:latest
+          command:
+            - /bin/sh
+            - -c
+            - |
+              until mc alias set myminio http://loki-minio.openshift-loki-operator.svc:9000 minio minio123; do
+                echo "Waiting for MinIO..."
+                sleep 5
+              done
+              mc mb --ignore-existing myminio/loki
