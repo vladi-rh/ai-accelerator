@@ -20,7 +20,7 @@ spec:
       modelsAsService:
         managementState: Removed
     kueue:
-      managementState: Unmanaged
+      managementState: Removed
     llamastackoperator:
       managementState: Removed
     modelregistry:
